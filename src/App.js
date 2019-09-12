@@ -3,6 +3,7 @@ import Image from "./Image";
 import PageHeader from "./PageHeader";
 import axios from "axios";
 import DateSelector from "./DateSelector";
+import FunButtons from "./FunButtons";
 import "./App.css";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <PageHeader/>
       <Image data={data}/>
       <DateSelector setUrlDate={setUrlDate}/>
+      <FunButtons/>
     </div>
   );
 }

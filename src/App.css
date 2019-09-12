@@ -34,3 +34,24 @@
   }
 }
 
+.funButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin: 0 auto;
+}
+
+@keyframes flashAnim {
+  0%, 30% {
+    background-color: red;
+  }
+  30%, 60% {
+    background-color: yellow;
+  }
+  61%, 85% {
+    background-color: green;
+  }
+  86%, 100% {
+    background-color: blue;
+  }
+}
