@@ -3,16 +3,20 @@ import Image from "./Image";
 import PageHeader from "./PageHeader";
 import axios from "axios";
 import DateSelector from "./DateSelector";
+import DatePicker from "react-datepicker";
 import FunButtons from "./FunButtons";
+import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
 
 function App() {
   const [data, setData] = useState({});
   const [date, setDate] = useState("");
+  const [datePickerDate, setDatePickerDate] = useState(new Date());
 
   const setUrlDate = newDate => {
-    // console.log(newDate);
-    setDate(newDate);
+    console.log(newDate);
+    setDate(`${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`);
+    setDatePickerDate(newDate);
   }
   
   useEffect(() => {
@@ -27,13 +31,14 @@ function App() {
       })
   }, [date]);
 
+  // handleDateChange
 
   return (
     <div className="App">
       <PageHeader/>
       <Image data={data}/>
-      <DateSelector setUrlDate={setUrlDate}/>
-      <FunButtons/>
+      <FunButtons setUrlDate={setUrlDate}/>
+      <DatePicker selected={datePickerDate} onChange={setUrlDate}/>
     </div>
   );
 }

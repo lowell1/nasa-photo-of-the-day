@@ -8,16 +8,25 @@ const Button = styled.button`
     ${props => props.danger && `background-color: red; color: blue`};
     ${props => props.safe && `background-color: green; color: red`}
 `;
+ 
+// const onBtnClick = () => {
+    // console.log(document.querySelector(".funButtons button").style);
+   //document.querySelector(".funButtons button").animation="flashAnim 1s infinite";
+//    document.querySelector(".funButtons button").style.setProperty("animation", "flashAnim 1s infinte");
+// }
 
-const onBtnClick = () => {
-    console.log(document.querySelector("funButtons button"));
+const randomDate = () => {
+    var date = new Date();
+    date.setDate(date.getDate() - Math.floor(Math.random()*500));
+    console.log(`${date.getFullYear()}`);
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 }
 
-const FunButtons = () => {
+const FunButtons = props => {
     return (
         <div className="funButtons">
-            <Button danger onclick={e => onBtnClick()}>Danger!</Button>
-            <Button safe>Random date</Button>
+            <Button danger>Danger!</Button>
+            <Button safe onClick={e => props.setUrlDate(randomDate())}>Random date</Button>
         </div>
     );
 }

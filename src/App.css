@@ -42,16 +42,16 @@
 }
 
 @keyframes flashAnim {
-  0%, 30% {
+  0%, 25% {
     background-color: red;
   }
-  30%, 60% {
+  26%, 50% {
     background-color: yellow;
   }
-  61%, 85% {
+  51%, 75% {
     background-color: green;
   }
-  86%, 100% {
+  76%, 100% {
     background-color: blue;
   }
 }
