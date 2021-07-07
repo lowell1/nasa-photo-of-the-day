@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -29,5 +31,27 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.funButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  margin: 0 auto;
+}
+
+@keyframes flashAnim {
+  0%, 25% {
+    background-color: red;
+  }
+  26%, 50% {
+    background-color: yellow;
+  }
+  51%, 75% {
+    background-color: green;
+  }
+  76%, 100% {
+    background-color: blue;
   }
 }
